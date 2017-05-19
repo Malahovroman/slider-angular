@@ -1,0 +1,14 @@
+<div class="slider">
+  <ul class="slideShow">
+    <li *ngFor="let li of slides" [ngStyle]="{'display':li?.hidden?'none':''}" [ngClass]="li?.classes">
+      <app-print-slide [meta]="li"></app-print-slide>
+    </li>
+  </ul>
+  <div class="sliderArrows">
+    <a class="prev checkmark" (click)="backWard()"></a>
+    <a class="next checkmark" (click)="forWard()"></a>
+  </div>
+</div>
+<div class="thumbnail-box">
+<a *ngFor="let li of slides; let i = index" (click)="toSlide(i)" class="tambnaile" [ngClass]="li?.classes" ></a>
+</div>

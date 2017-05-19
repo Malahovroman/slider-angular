@@ -1,0 +1,9 @@
+<div *ngIf="meta.sType=='div'" [ngClass]="['box']" [innerHtml]="meta.content">
+</div>
+<div *ngIf="meta.sType=='video'" [ngClass]="['box']" #videoEmbed [innerHtml]="getVideoEmbed">
+</div>
+<div *ngIf="meta.sType=='map'" [ngClass]="['box']" #mapEmbed [innerHtml]="getMapEmbed"></div>
+<div *ngIf="meta.sType=='ajaxDiv'" [ngClass]="['box']">
+  <app-slide-loading [url]="meta.contentUrl"></app-slide-loading>
+</div>
+<img *ngIf="meta.sType=='img'" [ngClass]="['box']" [src]="meta.imgSrc" />
